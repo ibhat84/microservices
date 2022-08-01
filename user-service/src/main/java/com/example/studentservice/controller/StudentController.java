@@ -37,4 +37,12 @@ public class StudentController {
 
     }
 
+    @GetMapping("/testCircuitBreaker")
+    public String testCircuitBreaker()
+    {
+        return studentService.testCircuitBreaker();
+
+
+    }
+
 }
