@@ -6,6 +6,8 @@ import com.example.departmentservice.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/department")
 public class DepartmentClass {
@@ -26,11 +28,19 @@ public class DepartmentClass {
 
     }
 
+    @GetMapping("/all")
+    public List<Department> getAllDept(){
+        return departmentService.getAllDept();
+
+    }
 
     @GetMapping("/")
     public String sayHi(){
         return "Hello - This is Department Service";
 
     }
+
+
+
 
 }

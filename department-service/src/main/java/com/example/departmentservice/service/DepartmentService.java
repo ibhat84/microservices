@@ -6,6 +6,8 @@ import com.example.departmentservice.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DepartmentService {
 
@@ -21,6 +23,11 @@ public class DepartmentService {
 
     public Department getDepartment(Long deptId) {
         return departmentRepository.findByDepartmentId(deptId);
+
+    }
+
+    public List<Department> getAllDept() {
+        return departmentRepository.findAll();
 
     }
 }
