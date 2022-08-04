@@ -28,3 +28,7 @@ spring:
           uri: lb://FEIGN-CLIENT-SERVICE
           predicates:
             - Path=/feign/**
+        - id: CUSTOMER-SERVICE
+          uri: lb://CUSTOMER-SERVICE
+          predicates:
+            - Path=/customer/**
