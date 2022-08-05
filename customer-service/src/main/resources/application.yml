@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: CUSTOMER-SERVICE
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
+
 
 eureka:
   client:
