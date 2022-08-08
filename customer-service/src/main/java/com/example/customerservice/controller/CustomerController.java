@@ -4,6 +4,8 @@ package com.example.customerservice.controller;
 import com.example.customerservice.entity.Customer;
 import com.example.customerservice.service.CustomerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +19,8 @@ public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
+
+    Logger logger = LoggerFactory.getLogger(CustomerController.class);
 
 
     @PostMapping("/")

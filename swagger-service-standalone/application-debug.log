@@ -1,0 +1,4 @@
+2022-08-08 11:21:43 [main] INFO  c.e.s.SwaggerServiceStandaloneApplication - Starting SwaggerServiceStandaloneApplication using Java 18.0.2 on BhatsLenovo with PID 3416 (C:\Users\bhats\OneDrive\Documents\Dev-Code\myGitClones\microservices\swagger-service-standalone\target\classes started by bhats in C:\Users\bhats\OneDrive\Documents\Dev-Code\myGitClones\microservices\swagger-service-standalone)
+2022-08-08 11:21:43 [main] INFO  c.e.s.SwaggerServiceStandaloneApplication - No active profile set, falling back to 1 default profile: "default"
+2022-08-08 11:21:49 [main] INFO  c.e.s.SwaggerServiceStandaloneApplication - Started SwaggerServiceStandaloneApplication in 6.843 seconds (JVM running for 7.685)
+2022-08-08 11:22:00 [http-nio-9007-exec-3] INFO  c.e.s.c.ParticipantsController - allParticipants
