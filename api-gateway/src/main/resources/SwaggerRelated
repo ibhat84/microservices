@@ -1,0 +1,68 @@
+server:
+  port: 9191
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    instance:
+      hostname: localhost
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: STUDENT-SERVICE
+          uri: lb://STUDENT-SERVICE
+          predicates:
+            - Path=/student/**
+          filters:
+            - RewritePath=/student/(?<path>.*), /$\{path}
+        - id: DEPARTMENT-SERVICE
+          uri: lb://DEPARTMENT-SERVICE/
+          predicates:
+            - Path=/department/**
+          filters:
+            - RewritePath=/department/(?<path>.*), /$\{path}
+        - id: FEIGN-CLIENT-SERVICE
+          uri: lb://FEIGN-CLIENT-SERVICE
+          predicates:
+            - Path=/feign/**
+          filters:
+            - RewritePath=/feign/(?<path>.*), /$\{path}
+        - id: CUSTOMER-SERVICE
+          uri: lb://CUSTOMER-SERVICE
+          predicates:
+            - Path=/customer/**
+          filters:
+            - RewritePath=/customer/(?<path>.*), /$\{path}
+        - id: PARTICIPANTS-SERVICE
+          uri: lb://PARTICIPANTS-SERVICE
+          predicates:
+            - Path=/participants/**
+          filters:
+            - RewritePath=/participants/(?<path>.*), /$\{path}
+        - id: openapi
+          uri: http://localhost:${server.port}
+          predicates:
+              - Path=/v3/api-docs/**
+          filters:
+              - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
+
+spring-doc:
+  swagger-ui:
+    urls:
+     - name: customer
+       url: /v3/api-docs/customer
+     - name: feign
+       url: /v3/api-docs/feign
+     - name: department
+       url: /v3/api-docs/department
+     - name: student
+       url: /v3/api-docs/student
+     - name: participants
+       url: /v3/api-docs/participants
