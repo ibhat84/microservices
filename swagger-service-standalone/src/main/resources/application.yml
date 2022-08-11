@@ -1,6 +1,20 @@
 server:
   port: 9007
+  use-forward-headers: true
+  forward-headers-strategy: framework
 
+spring:
+  application:
+    name: PARTICIPANTS-SERVICE
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    instance:
+      hostname: localhost
 
 logging:
   level:
@@ -13,3 +27,6 @@ logging:
     file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
   file:
     name: application-debug.log
+
+#spring-doc:
+  #packagesToScan: com.example.swaggerservicestandalone

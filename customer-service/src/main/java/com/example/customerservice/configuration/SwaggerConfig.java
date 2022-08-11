@@ -8,12 +8,9 @@ import org.springframework.web.filter.ForwardedHeaderFilter;
 @Configuration
 public class SwaggerConfig {
 
-   /* @Bean
-    ForwardedHeaderFilter forwardedHeaderFilter() {
-        return new ForwardedHeaderFilter();
-    }
 
-    */
+
+
 
 
 
