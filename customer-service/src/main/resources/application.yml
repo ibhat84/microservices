@@ -1,13 +1,12 @@
 server:
   port: 9004
+  use-forward-headers: true
+  forward-headers-strategy: framework
+
 
 spring:
   application:
     name: CUSTOMER-SERVICE
-  mvc:
-    path match:
-      matching-strategy: ant_path_matcher
-
 
 eureka:
   client:
@@ -17,3 +16,6 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
     instance:
       hostname: localhost
+
+#spring-doc:
+  #packagesToScan: com.example.customerservice

@@ -1,5 +1,5 @@
 server:
-  port: 9192
+  port: 9191
 
 eureka:
   client:
@@ -10,16 +10,11 @@ eureka:
     instance:
       hostname: localhost
 
-
-
 spring:
   application:
     name: API-GATEWAY
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
       routes:
         - id: STUDENT-SERVICE
           uri: lb://STUDENT-SERVICE
@@ -54,26 +49,20 @@ spring:
         - id: openapi
           uri: http://localhost:${server.port}
           predicates:
-            - Path=/v3/api-docs/**
+              - Path=/v3/api-docs/**
           filters:
-            - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
+              - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
 
 spring-doc:
-  api-docs:
-    enabled: true
   swagger-ui:
     urls:
-      - name: customer
-        url: /v3/api-docs/customer
-      - name: feign
-        url: /v3/api-docs/feign
-      - name: department
-        url: /v3/api-docs/department
-      - name: student
-        url: /v3/api-docs/student
-      - name: participants
-        url: /v3/api-docs/participants
-
-
-
-
+     - name: customer
+       url: /v3/api-docs/customer
+     - name: feign
+       url: /v3/api-docs/feign
+     - name: department
+       url: /v3/api-docs/department
+     - name: student
+       url: /v3/api-docs/student
+     - name: participants
+       url: /v3/api-docs/participants
