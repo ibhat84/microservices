@@ -28,5 +28,3 @@ logging:
   file:
     name: application-debug.log
 
-#spring-doc:
-  #packagesToScan: com.example.swaggerservicestandalone
