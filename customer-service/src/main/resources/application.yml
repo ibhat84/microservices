@@ -17,5 +17,3 @@ eureka:
     instance:
       hostname: localhost
 
-#spring-doc:
-  #packagesToScan: com.example.customerservice
